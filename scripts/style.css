@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: grey;
+    font-family: Helvetica, 'Open Sans', sans-serif;
+    height: 100%;
+    font-size: 18px;
+}
+
+.content {
+    display: flex;
+}
+
+.header {
+    display: flex;
+    background-color: white;
+}
+
+.title {
+    padding-left: 30px;
+    font-size: 46px;
+    font-weight: bolder;
+    color: rgb(218,170,0);
+    -webkit-text-stroke-color: rgb(0,62,106);
+    -webkit-text-stroke-width: 6px;
+    max-width: 700px;
+}
+
+.vidList,
+.timeStamp {
+    margin: 20px;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+.videoTitle {
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.videoHeader {
+    font-weight: bolder;
+    font-size: 24px;
+    margin-left: 50px;
+}
+
+.player {
+    margin-top: 20px;
+    height: 1000px;
+}
+
+video {
+    width: 100vw;
+    height: 100vw;
+    max-width: 1600px;
+    max-height: 900px;
+}
