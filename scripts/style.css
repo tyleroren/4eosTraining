@@ -50,6 +50,10 @@ body {
     margin: 20px;
 }
 
+a {
+    color: rgb(222, 222, 255);
+}
+
 a:link,
 a:visited {
     text-decoration: none;
@@ -62,18 +66,24 @@ a:active {
 
 .videoTitle {
     font-weight: bolder;
-    font-size: 24px;
+    font-size: 28px;
+    color: rgb(218,170,0);
 }
 
 .videoHeader {
     font-weight: bolder;
-    font-size: 24px;
+    font-size: 28px;
     margin-left: 50px;
+    color: rgb(218,170,0);
 }
 
 .player {
     margin: 10px;
     height: 1000px;
+}
+
+li::marker {
+    color: rgb(218,170,0);
 }
 
 video {

@@ -77,10 +77,12 @@ document.querySelectorAll('button').forEach((item) => item.addEventListener('cli
 }));
 
 function createVideoList(source, header) {
-    const timeStamp = document.querySelector('.timeStamp');
-    document.querySelector('.videoHeader').textContent = header;
     if (source === "home") location.reload();
+    const timeStamp = document.querySelector('.timeStamp');
     const vidList = document.querySelector('.vidList');
+    document.querySelector('.videoHeader').textContent = header;
+    document.querySelector('#videoPlayer').setAttribute('src', '');
+    document.getElementById('videoPlayer').style.visibility = "hidden";
     while (vidList.firstChild) vidList.removeChild(vidList.lastChild);
     while (timeStamp.firstChild) timeStamp.removeChild(timeStamp.lastChild);
     materials.forEach((item, index) => {
