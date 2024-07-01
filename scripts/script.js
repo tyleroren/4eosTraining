@@ -10,10 +10,13 @@ function createVideoList(source, header) {
     // Creates variables for html elements for easy access
     const timeStamp = document.querySelector('.timeStamp');
     const vidList = document.querySelector('.vidList');
+    const player = document.getElementById('videoPlayer');
     // Add header text, hide video and clear video path
     document.querySelector('.videoHeader').textContent = header;
-    document.querySelector('#videoPlayer').setAttribute('src', '');
-    document.getElementById('videoPlayer').style.visibility = "hidden";
+    player.pause()
+    player.removeAttribute('src');
+    player.load()
+    player.style.visibility = "hidden";
     document.querySelector('.credits').textContent = "";
     // Removes any items that may be in the video list or index lists on the page
     while (vidList.firstChild) vidList.removeChild(vidList.lastChild);
@@ -40,12 +43,16 @@ function timeStampSelection(filename, title, selector, author, date) {
     // Creates variables for html elements for easy access
     const timeStamp = document.querySelector('.timeStamp');
     const videoTitle = document.createElement('p');
+    const player = document.getElementById('videoPlayer');
     let href = "";
     // Removes any items that may be in the index list on the page
     while (timeStamp.firstChild) timeStamp.removeChild(timeStamp.lastChild);
     // Add video title and show the video player and sets the file path for the video
-    document.querySelector('#videoPlayer').setAttribute('src', `videos/${filename}`);
-    document.getElementById('videoPlayer').style.visibility = "visible";
+    player.pause()
+    player.removeAttribute('src');
+    player.load()
+    player.setAttribute('src', `videos/${filename}`);
+    player.style.visibility = "visible";
     document.querySelector('.credits').textContent = `Video recorded by ${author} on ${date}`;
     videoTitle.classList.add("videoTitle");
     videoTitle.textContent = title;
