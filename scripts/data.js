@@ -7,6 +7,7 @@ follows this template:
         title: "",
         filename: "",
         author: "",
+        date: "",
         index: []
     },
 
@@ -36,6 +37,7 @@ Step 2) Copy the template above including the curly brackets. Paste it into the 
             title: "Connectwise Overview",
             filename: "connectwise.mp4",
             author: "Tyler",
+            date: "",
             index: [
                 "00:00", "Connectwise Login and Introduction",
                 "02:49", "Connectwise Navigation",
@@ -53,6 +55,7 @@ Step 2) Copy the template above including the curly brackets. Paste it into the 
             title: "Screenconnect and ITGlue Overview",
             filename: "testSC.mp4",
             author: "",
+            date: "",
             index: [
                 "00:00", "test1",
                 "01:01", "test2",
@@ -65,10 +68,11 @@ Step 3) Fill in the various video properties, following the exact formatting of 
         If you omit the optional properties then do not delete them, leave them blank as they appear
         in the template.
 
-        category (required): can only be one of the following: helpdesk, sales, old, other
+        category (required): can only be one of the following: helpdesk, sales, lunch, other
         title (required): the full name you wish your video to appear as
         filename (required): the filename of the video that you put in the videos directory, including extension
         author (optional): name of the video's creator(s)
+        date (optional): date of the video's creation
         index (optional): list of timestamps for the video. Note the formatting of other videos, these must go between
                           the square brackets and follow this format: 
                           "##:##", "Text",
@@ -87,8 +91,8 @@ const materials = [
         category: "helpdesk",
         title: "Connectwise Overview",
         filename: "connectwise.mp4",
-        author: "Tyler",
-        date: "",
+        author: "Tyler Oren",
+        date: "06/13/2023",
         index: [
             "00:00", "Connectwise Login and Introduction",
             "02:49", "Connectwise Navigation",
@@ -164,7 +168,7 @@ const materials = [
         category: "sales",
         title: "Pax8 / Datto Information",
         filename: "paxdatto.mp4",
-        author: "Charlie",
+        author: "Charlie Schloss",
         date: "10/06/2021",
         index: [
             "01:00", "New tenet setup / advisor accounts",
@@ -183,6 +187,54 @@ const materials = [
         filename: "",
         author: "",
         date: "",
+        index: []
+    },
+    {
+        category: "lunch",
+        title: "Mike Repp Lunch & Lead Part 1",
+        filename: "LunchandLeadMReppVideo1.mp4",
+        author: "Mike Repp",
+        date: "03/24/2023",
+        index: []
+    },
+    {
+        category: "lunch",
+        title: "Mike Repp Lunch & Lead Part 2",
+        filename: "LunchandLeadMReppVideo2.mp4",
+        author: "Mike Repp",
+        date: "03/24/2023",
+        index: []
+    },
+    {
+        category: "lunch",
+        title: "Backup Radar and EDR",
+        filename: "BackUpRadarandEDR.mp4",
+        author: "Jakob Pascute",
+        date: "03/08/2023",
+        index: []
+    },
+    {
+        category: "lunch",
+        title: "DNS in Active Directory",
+        filename: "TonyADDNS.MP4",
+        author: "Tony Pollick",
+        date: "09/16/2022",
+        index: []
+    },
+    {
+        category: "lunch",
+        title: "Connectwise Manage",
+        filename: "DerekandConnectwise.MP4",
+        author: "Derek Felger",
+        date: "08/19/2022",
+        index: []
+    },
+    {
+        category: "lunch",
+        title: "Office 365",
+        filename: "JonandOffice365.MP4",
+        author: "Jon Burden",
+        date: "08/05/2022",
         index: []
     },
 ];

@@ -14,6 +14,7 @@ function createVideoList(source, header) {
     document.querySelector('.videoHeader').textContent = header;
     document.querySelector('#videoPlayer').setAttribute('src', '');
     document.getElementById('videoPlayer').style.visibility = "hidden";
+    document.querySelector('.credits').textContent = "";
     // Removes any items that may be in the video list or index lists on the page
     while (vidList.firstChild) vidList.removeChild(vidList.lastChild);
     while (timeStamp.firstChild) timeStamp.removeChild(timeStamp.lastChild);
@@ -27,7 +28,7 @@ function createVideoList(source, header) {
             let a = document.createElement('a');
             a.textContent = item.title;
             a.href = "javascript:void(0);";
-            a.setAttribute("onclick", `timeStampSelection('${item.filename}', '${item.title}', ${index})`);
+            a.setAttribute("onclick", `timeStampSelection('${item.filename}', '${item.title}', ${index}, '${item.author}', '${item.date}')`);
             list.appendChild(a);
             vidList.appendChild(list);
         };
@@ -35,7 +36,7 @@ function createVideoList(source, header) {
 }
 
 // Creates the list of index timestamps depending on which video is selected
-function timeStampSelection(filename, title, selector) {
+function timeStampSelection(filename, title, selector, author, date) {
     // Creates variables for html elements for easy access
     const timeStamp = document.querySelector('.timeStamp');
     const videoTitle = document.createElement('p');
@@ -45,6 +46,7 @@ function timeStampSelection(filename, title, selector) {
     // Add video title and show the video player and sets the file path for the video
     document.querySelector('#videoPlayer').setAttribute('src', `videos/${filename}`);
     document.getElementById('videoPlayer').style.visibility = "visible";
+    document.querySelector('.credits').textContent = `Video recorded by ${author} on ${date}`;
     videoTitle.classList.add("videoTitle");
     videoTitle.textContent = title;
     timeStamp.appendChild(videoTitle);
