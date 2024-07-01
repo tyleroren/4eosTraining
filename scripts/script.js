@@ -1,90 +1,26 @@
-const materials = [
-    {
-        category: "helpdesk",
-        title: "Connectwise Overview",
-        filename: "connectwise.mp4",
-        index: [
-            "00:00", "Connectwise Login and Introduction",
-            "02:49", "Connectwise Navigation",
-            "04:09", "Introduction to the Service Board",
-            "07:22", "Introduction to Tickets",
-            "12:56", "Creating a New Ticket",
-            "20:09", "Adding Notes to a Ticket / Intro to Time Entry",
-            "35:19", "Time Sheet Management",
-            "44:55", "Customizing Connectwise"
-        ]
-    },
-    {
-        category: "helpdesk",
-        title: "Screenconnect and ITGlue Overview",
-        filename: "testSC.mp4",
-        index: [
-            "00:00", "test1",
-            "01:01", "test2",
-            "02:02", "test3"
-        ]
-    },
-    {
-        category: "helpdesk",
-        title: "Answering Calls",
-        filename: "",
-        index: []
-    },
-    {
-        category: "helpdesk",
-        title: "Troubleshooting on a Call",
-        filename: "",
-        index: []
-    },
-    {
-        category: "helpdesk",
-        title: "Troubleshooting Basics",
-        filename: "",
-        index: []
-    },
-    {
-        category: "helpdesk",
-        title: "Advanced Troubleshooting",
-        filename: "",
-        index: []
-    },
-    {
-        category: "helpdesk",
-        title: "Microsoft Licensing",
-        filename: "",
-        index: []
-    },
-    {
-        category: "helpdesk",
-        title: "Pathfinder",
-        filename: "",
-        index: []
-    },
-    {
-        category: "old",
-        title: "Pax8 Information",
-        filename: "testpax8.mp4",
-        index: [
-            "00:00", "test10",
-            "01:01", "test09",
-            "02:02", "test08"
-        ]
-    },
-];
-
+// Creates listeners for every button on the page, passing the class and text to the createVideoList function
 document.querySelectorAll('button').forEach((item) => item.addEventListener('click', (e) => {
     createVideoList(e.target.classList[0], e.target.textContent);
 }));
 
+// Creates the list of videos that appears depending on which button is pressed
 function createVideoList(source, header) {
+    // home button just refreshes the page because I'm lazy
     if (source === "home") location.reload();
+    // Creates variables for html elements for easy access
     const timeStamp = document.querySelector('.timeStamp');
     const vidList = document.querySelector('.vidList');
+    // Add header text, hide video and clear video path
     document.querySelector('.videoHeader').textContent = header;
     document.querySelector('#videoPlayer').setAttribute('src', '');
     document.getElementById('videoPlayer').style.visibility = "hidden";
+    // Removes any items that may be in the video list or index lists on the page
     while (vidList.firstChild) vidList.removeChild(vidList.lastChild);
     while (timeStamp.firstChild) timeStamp.removeChild(timeStamp.lastChild);
+    /* Runs through each object in the materials array, checking to see if the "category" property
+    matches the class of the button that was pressed. Each item that does match will create a hyperlink
+    and a list item. The hyperlink text is taken from the "title" property and the URL is a new function
+    which passes the "filename" property, "title" property, and the index of the array to the next function */
     materials.forEach((item, index) => {
         if (item.category === source) {
             let list = document.createElement('li');
@@ -98,16 +34,26 @@ function createVideoList(source, header) {
     });
 }
 
+// Creates the list of index timestamps depending on which video is selected
 function timeStampSelection(filename, title, selector) {
+    // Creates variables for html elements for easy access
     const timeStamp = document.querySelector('.timeStamp');
     const videoTitle = document.createElement('p');
     let href = "";
+    // Removes any items that may be in the index list on the page
     while (timeStamp.firstChild) timeStamp.removeChild(timeStamp.lastChild);
+    // Add video title and show the video player and sets the file path for the video
     document.querySelector('#videoPlayer').setAttribute('src', `videos/${filename}`);
     document.getElementById('videoPlayer').style.visibility = "visible";
     videoTitle.classList.add("videoTitle");
     videoTitle.textContent = title;
     timeStamp.appendChild(videoTitle);
+    /* Using the array index that was passed from the previous function, we can target the index
+    property for the correct video in the array. Again a hyperlink and list item are created
+    for each item. Each even array item is saved to the href variable (this should be the timestamp)
+    and every odd array item is set as the hyperlink text (this should be the index label).
+    Again each hyperlink points to a new function, videoPlayer, passing through the filename and
+    timestamp */
     materials[selector].index.forEach((item, index) => {
         let list = document.createElement('li');
         let a = document.createElement('a');
@@ -123,6 +69,7 @@ function timeStampSelection(filename, title, selector) {
     });
 }
 
+// Sets the video to start at a specific time
 function videoPlayer(time, filename) {
     document.querySelector('#videoPlayer').setAttribute('src', `videos/${filename}#t=${time}`);
 }
