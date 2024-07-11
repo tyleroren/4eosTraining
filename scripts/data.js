@@ -116,19 +116,7 @@ const materials = [
     },
     {
         category: "helpdesk",
-        title: "Screenconnect and ITGlue Overview",
-        filename: "testSC.mp5",
-        author: "",
-        date: "",
-        index: [
-            "00:00", "test1",
-            "01:01", "test2",
-            "02:02", "test3"
-        ]
-    },
-    {
-        category: "helpdesk",
-        title: "Answering Calls",
+        title: "Screenconnect and ITGlue Overview (coming soon)",
         filename: "",
         author: "",
         date: "",
@@ -136,7 +124,7 @@ const materials = [
     },
     {
         category: "helpdesk",
-        title: "Troubleshooting on a Call",
+        title: "Answering Calls (coming soon)",
         filename: "",
         author: "",
         date: "",
@@ -144,7 +132,7 @@ const materials = [
     },
     {
         category: "helpdesk",
-        title: "Troubleshooting Basics",
+        title: "Troubleshooting on a Call (coming soon)",
         filename: "",
         author: "",
         date: "",
@@ -152,7 +140,7 @@ const materials = [
     },
     {
         category: "helpdesk",
-        title: "Advanced Troubleshooting",
+        title: "Troubleshooting Basics (coming soon)",
         filename: "",
         author: "",
         date: "",
@@ -160,7 +148,7 @@ const materials = [
     },
     {
         category: "helpdesk",
-        title: "Microsoft Licensing",
+        title: "Advanced Troubleshooting (coming soon)",
         filename: "",
         author: "",
         date: "",
@@ -168,7 +156,15 @@ const materials = [
     },
     {
         category: "helpdesk",
-        title: "Pathfinder",
+        title: "Microsoft Licensing (coming soon)",
+        filename: "",
+        author: "",
+        date: "",
+        index: []
+    },
+    {
+        category: "helpdesk",
+        title: "Pathfinder (coming soon)",
         filename: "",
         author: "",
         date: "",
@@ -193,7 +189,7 @@ const materials = [
     },
     {
         category: "sales",
-        title: "Microsoft Licensing",
+        title: "Microsoft Licensing (coming soon)",
         filename: "",
         author: "",
         date: "",

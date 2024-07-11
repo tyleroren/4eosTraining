@@ -87,8 +87,10 @@ function timeStampSelection(filename, title, selector, author, date) {
                 timeStamp.appendChild(list);
             };
         });
+    } else if (!filename.slice(-3)) {
+        videoTitle.textContent = "No video uploaded yet";
     } else {
-        videoTitle.textContent = "! File type error !"
+        videoTitle.textContent = "! File type error !";
     }
     
 
