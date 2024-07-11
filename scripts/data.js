@@ -62,6 +62,8 @@ Step 2) Copy the template above including the curly brackets. Paste it into the 
                 "02:02", "test3"
             ]
         },
+        >>>YOUR NEW VIDEO COULD ALSO BE PASTED HERE INSTEAD, AFTER THE COMMA THAT ENDS THE SCREENCONNECT VIDEO OBJECT<<<
+        
 
 Step 3) Fill in the various video properties, following the exact formatting of the existing videos-
         comma placement, quote placements, brackets, etc
@@ -89,6 +91,14 @@ Step 4) That's all, you're done. If the page is already open just refresh it and
 const materials = [
     {
         category: "helpdesk",
+        title: "Ticket Flow / Escalation",
+        filename: "ticketflow.pdf",
+        author: "Tyler Oren",
+        date: "07/11/2024",
+        index: []
+    },
+    {
+        category: "helpdesk",
         title: "Connectwise Overview",
         filename: "connectwise.mp4",
         author: "Tyler Oren",
@@ -107,7 +117,7 @@ const materials = [
     {
         category: "helpdesk",
         title: "Screenconnect and ITGlue Overview",
-        filename: "testSC.mp4",
+        filename: "testSC.mp5",
         author: "",
         date: "",
         index: [
